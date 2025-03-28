@@ -31,7 +31,8 @@ A modern, smooth-scrolling calendar app built completely in **Jetpack Compose**,
 
 ## 📁 Folder Structure
 
-app/ ├── model/ │ ├── MonthModel.kt │ ├── MonthView.kt │ ├── DayItem.kt │ ├── HolidayData.kt │ └── CustomToolbar.kt ├── ui.theme/ ├── MainActivity.kt └── LogoutScreen.kt
+app/ ├── model/ │ ├── MonthModel.kt │
+                  ├── MonthView.kt │ ├── DayItem.kt │ ├── HolidayData.kt │ └── CustomToolbar.kt ├── ui.theme/ ├── MainActivity.kt └── LogoutScreen.kt
 
 
 
