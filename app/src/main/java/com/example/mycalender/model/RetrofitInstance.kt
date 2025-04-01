@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
-    private const val BASE_URL = "http://api.weatherstack.com/"
+    private const val BASE_URL = "http://api.weatherstack.com/current/"
 
     val api: WeatherApiService by lazy {
         Retrofit.Builder()
