@@ -47,6 +47,8 @@ android {
 
 dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.6")
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
+    implementation ("com.google.dagger:hilt-android:2.48")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

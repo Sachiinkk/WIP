@@ -1,69 +1,81 @@
-# 📆 Jetpack Compose Calendar App
+# 🌤️ MyCalendar App
 
-A modern, smooth-scrolling calendar app built completely in **Jetpack Compose**, featuring:
+A modern Android app built with **Jetpack Compose** and **MVVM architecture**. It features:
 
-- 📅 Month-wise calendar layout
-- 🔴 Highlighted Sundays and holidays
-- 📌 Holiday click-to-toast with names
-- 🔐 Logout + Login Navigation
-- 🎨 Dark theme support
-
----
-
-## 📸 Preview
-
-| Calendar View | Holiday Toast | Logout Screen |
-|:-------------:|:-------------:|:-------------:|
-| ![calendar](preview/calendar.png) | ![toast](preview/toast.png) | ![logout](preview/logout.png) |
+- 📅 Calendar with monthly view
+- 🌦️ Weather forecast (weekly + daily)
+- 🔄 Reusable UI components
+- 🔒 Logout screen
+- ⏳ Loader between screens
 
 ---
 
 ## 🔧 Tech Stack
 
-- **Jetpack Compose**
-- **Kotlin**
-- **Navigation Compose**
-- **Material3**
-- **LazyColumn**
-- **Composable-based UI Architecture**
+- Kotlin
+- Jetpack Compose
+- MVVM (ViewModel + StateFlow)
+- Retrofit (API calls)
+- WeatherStack API
+- Navigation Component
+- Coroutines
 
 ---
 
 ## 📁 Folder Structure
 
-app/ ├── model/ │ ├── MonthModel.kt │
-                  ├── MonthView.kt │ ├── DayItem.kt │ ├── HolidayData.kt │ └── CustomToolbar.kt ├── ui.theme/ ├── MainActivity.kt └── LogoutScreen.kt
+app/ ├── data/ # Data layer (models, remote API, repo) ├── di/ # Dependency Injection setup ├── domain/usecase/ # UseCases like GetWeatherUseCase ├── presentation/ │ ├── calendar/ # Calendar UI and ViewModel │ ├── weather/ # Weather screen and ViewModel │ └── component/ # Reusable UI like CustomToolbar, LogoutScreen ├── utils/ # Helper utils (holidays map, dialog) └── MainActivity.kt # App entry point + Navigation
 
 
 
 ---
 
-## ✅ Features Implemented
+## 🚀 Features
 
-- [x] **Month Calendar UI** using `LazyColumn`
-- [x] **Chunked Rows** of days with headers
-- [x] **Sunday + Holiday Highlighting** (in red)
-- [x] **Clicking a holiday shows Toast** with name
-- [x] **Smooth scrolling** using LazyColumn optimizations
-- [x] **Navigation**: Logout & return to calendar
-- [x] **Dark background** with theming
-- [x] **Fixes for padding & day alignment**
-- [x] **Holiday map integration** with over 30 Indian holidays
+- 📆 Monthly calendar UI
+- 🌤️ Weekly + detailed day forecast using WeatherStack API
+- 👤 Custom toolbar with logout confirmation
+- 🌀 Smooth loader before navigating to weather screen
+- 🔙 Back navigation from weather to calendar
+- 🔐 Logout screen with re-login option
 
 ---
 
-## 📚 Resources Used
+## 🖼️ Screens
 
-- [Jetpack Compose Documentation](https://developer.android.com/jetpack/compose)
-- [Navigation Compose](https://developer.android.com/jetpack/compose/navigation)
-- [Material3 Compose](https://developer.android.com/jetpack/androidx/releases/compose-material3)
-- [Compose Layouts & LazyColumn](https://developer.android.com/jetpack/compose/lists)
+- **CalendarScreen** – Monthly calendar with date selection
+- **WeatherScreen** – Shows daily + weekly weather
+- **LogoutScreen** – "You are logged out" with re-login button
 
 ---
 
-## 🚀 Getting Started
+## 📲 API Integration
 
-Make sure your `build.gradle.kts` has:
-```kotlin
-implementation("androidx.navigation:navigation-compose:2.7.6")
-implementation("androidx.compose.material3:material3")
+- Weather data fetched from:  
+  `https://api.weatherstack.com/current?access_key=YOUR_KEY&query=CITY`
+
+> Replace `YOUR_KEY` in `RetrofitInstance.kt`.
+
+---
+
+## 💡 How to Run
+
+1. Clone the repo
+2. Add your WeatherStack API key
+3. Build and run in Android Studio
+
+---
+
+## 📌 Note
+
+- Images like `sun.png`, `rain.png` must be placed in `res/drawable/`.
+- Network permission & cleartext support added in `AndroidManifest.xml`.
+
+---
+
+## ✨ Contributions
+
+Feel free to fork, improve, or raise issues. Let’s make it better!
+
+---
+
